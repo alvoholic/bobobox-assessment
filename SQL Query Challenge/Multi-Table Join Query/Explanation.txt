@@ -12,9 +12,9 @@ Penjelasan Detail per Bagian
     - Total_Price
 
 2. JOIN ke tabel lain
-    - JOIN Guests g → ambil nama tamu (Guest_Name) berdasarkan Guest_ID.
-    - JOIN Locations l → ambil nama lokasi (Location_Name) berdasarkan Location_ID.
-    - JOIN Reviews r → ambil nilai Rating dari ulasan berdasarkan Booking_ID.
+    - JOIN Guests g -> ambil nama tamu (Guest_Name) berdasarkan Guest_ID.
+    - JOIN Locations l -> ambil nama lokasi (Location_Name) berdasarkan Location_ID.
+    - JOIN Reviews r -> ambil nilai Rating dari ulasan berdasarkan Booking_ID.
 
 3. Subquery: Previous_Check_Out_Date
     (
