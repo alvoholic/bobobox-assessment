@@ -1,0 +1,36 @@
+Penjelasan per bagian
+
+1. FROM Bookings b
+    Mengambil data pemesanan dari tabel Bookings, berisi detail setiap transaksi.
+    Misalnya kolomnya:
+    - Booking_ID
+    - Guest_ID
+    - Location_ID
+    - Booking_Date, dll.
+
+2. JOIN Locations l ON b.Location_ID = l.Location_ID
+    Menghubungkan tiap booking dengan lokasinya (misalnya hotel atau pod tertentu), agar kita tahu kota (City) tempat lokasi tersebut berada.
+
+3. JOIN Reviews r ON b.Booking_ID = r.Booking_ID
+    Menghubungkan dengan tabel Reviews supaya bisa mengambil Rating dari masing-masing booking.
+
+4. GROUP BY l.City
+    Mengelompokkan hasil berdasarkan nama kota.
+    Akan menghitung statistik untuk tiap kota.
+
+5. SELECT
+    Menampilkan 3 kolom:
+    - l.City → nama kota.
+    - COUNT(b.Booking_ID) → jumlah total booking di kota itu.
+    - ROUND(AVG(r.Rating), 2) → rata-rata rating ulasan, dibulatkan 2 desimal.
+
+6. HAVING
+    Filter setelah agregasi (beda dengan WHERE yang berlaku sebelum GROUP BY):
+      HAVING 
+       AVG(r.Rating) >= 4.0
+       AND COUNT(b.Booking_ID) >= 10
+    - Hanya tampilkan kota dengan rata-rata rating ≥ 4.0,
+    - dan jumlah booking minimal 10 kali.
+
+7. ORDER BY Total_Bookings DESC
+    Urutkan hasil dari kota dengan total booking terbanyak ke paling sedikit.
