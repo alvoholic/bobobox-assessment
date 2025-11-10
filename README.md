@@ -5,9 +5,10 @@ Tujuan dari assessment ini adalah untuk menguji kemampuan analisis data, transfo
 
 =======================================================================================================================================
 
+'''
 Struktur Direktori
 
-'''bobobox-assessment/
+bobobox-assessment/
 │
 ├── Data Analysis Challenge/
 │   ├── Anomali Detection/
@@ -41,7 +42,8 @@ Struktur Direktori
     └── Multi-Table Join Query/
         ├── Explanation.txt
         ├── Contoh Output.txt
-        └── multi-table-join-query.sql'''
+        └── multi-table-join-query.sql
+'''
 
 ==============================================================================================================================================================
 
