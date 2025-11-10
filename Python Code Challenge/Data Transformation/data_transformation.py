@@ -49,10 +49,6 @@ def transform_checkin_logs(df: pd.DataFrame) -> pd.DataFrame:
     return df.reset_index(drop=True)
 
 
-# =======================
-#  Example Usage
-# =======================
-
 data = """Log_ID,Guest_ID,Check_In_Date,Duration_String,Location_ID,Guest_Type
 1001,G1234,2024-03-15,"2 days, 10 hours",LOC01,New_User
 1002,G5678,2023-12-28,"1 day, 5 hours",LOC03,returning
