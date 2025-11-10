@@ -1,0 +1,4 @@
+| Device_Type | Total_Transactions | Total_Amount_IDR | Avg_Amount_IDR | Dominant_Transaction_Type |
+| ----------- | ------------------ | ---------------- | -------------- | ------------------------- |
+|     Mobile  | 59                 | 7,947,500        | 134,703.39     | Deposit                   |
+|     Web     | 31                 | 4,657,000        | 150,225.81     | Deposit                   |
