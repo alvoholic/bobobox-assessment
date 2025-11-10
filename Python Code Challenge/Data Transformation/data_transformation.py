@@ -50,7 +50,7 @@ def transform_checkin_logs(df: pd.DataFrame) -> pd.DataFrame:
 
 
 # =======================
-# 🧪 Example Usage
+#  Example Usage
 # =======================
 
 data = """Log_ID,Guest_ID,Check_In_Date,Duration_String,Location_ID,Guest_Type
