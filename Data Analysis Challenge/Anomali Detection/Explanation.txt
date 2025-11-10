@@ -1,1 +1,38 @@
+Penjelasan per langkah
+
+STEP 1 — Load file dan filter data sukses
+      df = pd.read_csv("transactions.csv")
+      df["Transaction_Time"] = pd.to_datetime(df["Transaction_Time"], errors="coerce")
+      df_success = df[df["Status"].str.lower() == "success"].copy()
+  - File transactions.csv dibaca ke DataFrame df.
+  - Kolom Transaction_Time diubah ke tipe datetime.
+  - Hanya transaksi dengan status success yang diambil ke df_success.
+  Tujuan: hanya transaksi valid yang dianalisis.
+
+
+STEP 2 — Hitung ambang batas anomali
+      Q1 = df_success["Amount_IDR"].quantile(0.25)
+      Q3 = df_success["Amount_IDR"].quantile(0.75)
+      IQR = Q3 - Q1
+      upper_limit = Q3 + 1.5 * IQR
+  - Q1 = kuartil bawah (25%)
+  - Q3 = kuartil atas (75%)
+  - IQR = jarak antara kuartil (Q3 - Q1)
+  - upper_limit = batas atas normal, dihitung dengan rumus Q3 + 1.5 × IQR
+  Transaksi yang memiliki Amount_IDR lebih besar dari upper_limit dianggap anomali.
+
+
+STEP 3 — Ambil transaksi anomali
+      anomalies = df_success[df_success["Amount_IDR"] > upper_limit].copy()
+  - Semua baris yang Amount_IDR-nya melebihi upper_limit dikumpulkan dalam anomalies.
+
+
+STEP 4 — Simpan hasil dan tampilkan
+      os.makedirs("output", exist_ok=True)
+      anomalies.to_csv("output/anomalies.csv", index=False)
+  - Folder output/ akan dibuat otomatis jika belum ada.
+  - Hasil anomali disimpan ke file output/anomalies.csv.
+  - Jika tidak ada data anomali, akan muncul pesan:
+      Tidak ada anomali terdeteksi.
+
 
