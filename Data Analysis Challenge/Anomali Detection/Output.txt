@@ -1,0 +1,7 @@
+| Transaction_ID | Transaction_Type | Amount_IDR | Device_Type |
+| -------------- | ---------------- | ---------- | ----------- |
+| T0123          | Purchase         | 9800000    | Mobile      |
+| T0195          | TopUp            | 10200000   | Web         |
+| T0240          | Transfer         | 15000000   | Mobile      |
+
+Dan file output/anomalies.csv akan berisi data tersebut.
