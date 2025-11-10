@@ -57,7 +57,7 @@ Kriteria:
 AVG(Rating) >= 4.0
 COUNT(Bookings) >= 10
 Yang memenuhi hanya:
-Bandung → 4.3 (10 booking)
+Bandung -> 4.3 (10 booking)
 
 Hasil Akhir Query
 | City    | Total_Bookings | Average_Rating |
