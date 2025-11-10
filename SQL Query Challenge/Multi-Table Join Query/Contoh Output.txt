@@ -1,0 +1,51 @@
+Tabel Guests
+| Guest_ID | Guest_Name |
+| -------- | ---------- |
+| G001     | Alice      |
+| G002     | Bob        |
+
+Tabel Locations
+| Location_ID | Location_Name   | Type      |
+| ----------- | --------------- | --------- |
+| L01         | Bobobox Bandung | Pod       |
+| L02         | Bobobox Jakarta | Pod       |
+| L03         | Boboliving Bali | Apartment |
+
+Tabel Bookings
+| Booking_ID | Guest_ID | Location_ID | Booking_Date | Check_In_Date | Duration | Total_Price |
+| ---------- | -------- | ----------- | ------------ | ------------- | -------- | ----------- |
+| B001       | G001     | L01         | 2024-03-01   | 2024-03-05    | 3        | 900000      |
+| B002       | G001     | L02         | 2024-06-10   | 2024-06-15    | 2        | 600000      |
+| B003       | G002     | L02         | 2024-07-01   | 2024-07-05    | 4        | 1200000     |
+| B004       | G001     | L03         | 2024-08-01   | 2024-08-03    | 2        | 2000000     |
+
+Tabel Reviews
+| Booking_ID | Rating |
+| ---------- | ------ |
+| B001       | 5      |
+| B002       | 5      |
+| B003       | 4      |
+| B004       | 5      |
+
+Query hanya mengambil lokasi Type = 'Pod' dan Rating = 5
+-> Jadi hanya B001 (L01) dan B002 (L02).
+
+Sekarang kita hitung Previous_Check_Out_Date:
+
+Untuk B001 (Alice, 2024-03-05 -> +3 hari = check-out 2024-03-08)
+-> Tidak ada booking sebelumnya -> NULL.
+
+Untuk B002 (Alice, 2024-06-15 -> +2 hari = 2024-06-17)
+-> Booking sebelumnya oleh Alice: B001 (check-out 2024-03-08).
+Karena < 2024-06-15 -> cocok.
+MAX(2024-03-08) = 2024-03-08.
+
+Output Akhir
+| Guest_Name | Location_Name   | Booking_Date | Previous_Check_Out_Date | Total_Price | Rating |
+| ---------- | --------------- | ------------ | ----------------------- | ----------- | ------ |
+| Alice      | Bobobox Bandung | 2024-03-01   | *(null)*                | 900000      | 5      |
+| Alice      | Bobobox Jakarta | 2024-06-10   | 2024-03-08              | 600000      | 5      |
+
+Query ini menampilkan semua booking dengan rating 5 di lokasi bertipe “Pod”, sekaligus menghitung tanggal check-out terakhir sebelum booking tersebut untuk setiap tamu.
+- Menunjukkan pola tamu loyal yang sering menginap di pod hotel.
+- Previous_Check_Out_Date membantu tahu kapan terakhir kali tamu itu menginap sebelumnya.
