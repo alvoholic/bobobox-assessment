@@ -1,0 +1,65 @@
+Tabel Locations
+| Location_ID | Location_Name       | City     |
+| ----------- | ------------------- | -------- |
+| L01         | Bobobox Bandung     | Bandung  |
+| L02         | Bobobox Jakarta     | Jakarta  |
+| L03         | Bobobox Bali        | Denpasar |
+| L04         | Boboliving Surabaya | Surabaya |
+
+Tabel Bookings
+| Booking_ID | Location_ID | Guest_ID |
+| ---------- | ----------- | -------- |
+| B001       | L01         | G001     |
+| B002       | L01         | G002     |
+| B003       | L01         | G003     |
+| B004       | L01         | G004     |
+| B005       | L01         | G005     |
+| B006       | L01         | G006     |
+| B007       | L01         | G007     |
+| B008       | L01         | G008     |
+| B009       | L01         | G009     |
+| B010       | L01         | G010     |
+| B011       | L02         | G011     |
+| B012       | L02         | G012     |
+| B013       | L02         | G013     |
+| B014       | L03         | G014     |
+| B015       | L04         | G015     |
+
+Tabel Reviews
+| Booking_ID | Rating |
+| ---------- | ------ |
+| B001       | 4      |
+| B002       | 5      |
+| B003       | 4      |
+| B004       | 3      |
+| B005       | 4      |
+| B006       | 5      |
+| B007       | 5      |
+| B008       | 4      |
+| B009       | 4      |
+| B010       | 5      |
+| B011       | 3      |
+| B012       | 2      |
+| B013       | 5      |
+| B014       | 5      |
+| B015       | 5      |
+
+Proses Agregasi
+| City     | Total_Bookings | Average_Rating                 |
+| -------- | -------------- | ------------------------------ |
+| Bandung  | 10             | (4+5+4+3+4+5+5+4+4+5)/10 = 4.3 |
+| Jakarta  | 3              | (3+2+5)/3 = 3.3                |
+| Denpasar | 1              | 5.0                            |
+| Surabaya | 1              | 5.0                            |
+
+Setelah HAVING Filter
+Kriteria:
+AVG(Rating) >= 4.0
+COUNT(Bookings) >= 10
+Yang memenuhi hanya:
+Bandung → 4.3 (10 booking)
+
+Hasil Akhir Query
+| City    | Total_Bookings | Average_Rating |
+| ------- | -------------- | -------------- |
+| Bandung | 10             | 4.30           |
