@@ -2,3 +2,7 @@
 | ----------- | ------------------ | ---------------- | -------------- | ------------------------- |
 |     Mobile  | 59                 | 7,947,500        | 134,703.39     | Deposit                   |
 |     Web     | 31                 | 4,657,000        | 150,225.81     | Deposit                   |
+
+- Ada 59 transaksi sukses melalui Mobile dengan total sekitar Rp7,9 juta, rata-rata per transaksi Rp134 ribu.
+- Ada 31 transaksi sukses melalui Web dengan total Rp4,65 juta, rata-rata Rp150 ribu.
+- Jenis transaksi dominan di kedua device adalah Deposit.
