@@ -1,0 +1,40 @@
+Penjelasan Detail per Bagian
+
+1. FROM Bookings b
+    Ini adalah tabel utama berisi data pemesanan (booking).
+    kolomnya:
+    - Booking_ID
+    - Guest_ID
+    - Location_ID
+    - Booking_Date
+    - Check_In_Date
+    - Duration
+    - Total_Price
+
+2. JOIN ke tabel lain
+    - JOIN Guests g → ambil nama tamu (Guest_Name) berdasarkan Guest_ID.
+    - JOIN Locations l → ambil nama lokasi (Location_Name) berdasarkan Location_ID.
+    - JOIN Reviews r → ambil nilai Rating dari ulasan berdasarkan Booking_ID.
+
+3. Subquery: Previous_Check_Out_Date
+    (
+    SELECT MAX(b2.Check_In_Date + b2.Duration)
+    FROM Bookings b2
+    WHERE b2.Guest_ID = b.Guest_ID
+      AND (b2.Check_In_Date + b2.Duration) < b.Check_In_Date
+    )
+    - Untuk setiap booking (b), kita cari tanggal check-out terakhir dari booking sebelumnya oleh tamu yang sama (Guest_ID sama).
+    - (b2.Check_In_Date + b2.Duration) → hitung tanggal check-out.
+    - Kondisi < b.Check_In_Date memastikan itu benar-benar sebelum booking saat ini.
+    - MAX(...) memastikan kita ambil yang paling akhir (tepat sebelum sekarang).
+  Hasilnya akan muncul sebagai kolom Previous_Check_Out_Date.
+
+4. Filter:
+    WHERE l.Type = 'Pod'
+    AND r.Rating = 5
+    - Hanya lokasi dengan tipe Pod (misalnya “Pod Room” seperti di hotel kapsul).
+    - Hanya ulasan dengan rating sempurna = 5.
+
+5. Urutan hasil:
+    ORDER BY g.Guest_Name, b.Booking_Date;
+    - Data diurut berdasarkan nama tamu, lalu tanggal booking.
