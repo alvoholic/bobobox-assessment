@@ -20,9 +20,9 @@ Penjelasan per bagian
 
 5. SELECT
     Menampilkan 3 kolom:
-    - l.City → nama kota.
-    - COUNT(b.Booking_ID) → jumlah total booking di kota itu.
-    - ROUND(AVG(r.Rating), 2) → rata-rata rating ulasan, dibulatkan 2 desimal.
+    - l.City -> nama kota.
+    - COUNT(b.Booking_ID) -> jumlah total booking di kota itu.
+    - ROUND(AVG(r.Rating), 2) -> rata-rata rating ulasan, dibulatkan 2 desimal.
 
 6. HAVING
     Filter setelah agregasi (beda dengan WHERE yang berlaku sebelum GROUP BY):
