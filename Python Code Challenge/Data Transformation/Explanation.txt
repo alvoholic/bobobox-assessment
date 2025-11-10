@@ -22,7 +22,7 @@ Rincian Langkah dalam Fungsi
     - Baris dengan NaT diabaikan (karena tidak bisa dibandingkan dengan tanggal).
 
 3. Parsing durasi menginap (Duration_String)
-    Misalnya: "2 days, 10 hours" → 58 jam.
+    Misalnya: "2 days, 10 hours" -> 58 jam.
     def parse_duration(duration_str):
     if pd.isna(duration_str):
         return None
