@@ -1,9 +1,9 @@
 import pandas as pd
 import os
 
-# ===============================
-# STEP 1 — Load CSV file
-# ===============================
+===============================
+STEP 1 — Load CSV file
+===============================
 file_path = "transactions.csv"
 df = pd.read_csv(file_path)
 
@@ -18,14 +18,14 @@ if missing_cols:
 
 df["Transaction_Time"] = pd.to_datetime(df["Transaction_Time"], errors="coerce")
 
-# ===============================
-# STEP 2 — Filter hanya transaksi sukses
-# ===============================
+===============================
+STEP 2 — Filter hanya transaksi sukses
+===============================
 df_success = df[df["Status"].str.lower() == "success"].copy()
 
-# ===============================
-# STEP 3 — Ringkasan per Device
-# ===============================
+===============================
+STEP 3 — Ringkasan per Device
+===============================
 summary = (
     df_success.groupby("Device_Type")
     .agg(
@@ -48,12 +48,12 @@ dominant_type = (
 summary = summary.merge(dominant_type, on="Device_Type", how="left")
 summary.rename(columns={"Transaction_Type": "Dominant_Transaction_Type"}, inplace=True)
 
-# ===============================
-# STEP 4 — Simpan hasil ringkasan
-# ===============================
+===============================
+STEP 4 — Simpan hasil ringkasan
+===============================
 os.makedirs("output", exist_ok=True)
 summary.to_csv("output/summary.csv", index=False)
 
-print("\n=== 📊 Summary by Device (Success Only) ===")
+print("\n=== Summary by Device (Success Only) ===")
 print(summary.to_string(index=False))
-print("\n✅ Hasil disimpan ke: output/summary.csv")
+print("\n Hasil disimpan ke: output/summary.csv")
