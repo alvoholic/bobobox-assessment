@@ -2,7 +2,7 @@
 -- DATABASE DESIGN: Bobobox Asset Management
 -- ===========================================
 
--- 1️⃣ Locations
+-- Locations
 -- Menyimpan daftar lokasi Bobobox (Hotel/Cabin)
 CREATE TABLE Locations (
     Location_ID VARCHAR(10) PRIMARY KEY,
@@ -11,7 +11,7 @@ CREATE TABLE Locations (
     Type VARCHAR(20) CHECK (Type IN ('Hotel', 'Cabin'))
 );
 
--- 2️⃣ Units
+-- Units
 -- Setiap unit berada di satu lokasi tertentu
 CREATE TABLE Units (
     Unit_ID VARCHAR(10) PRIMARY KEY,
@@ -22,7 +22,7 @@ CREATE TABLE Units (
     FOREIGN KEY (Location_ID) REFERENCES Locations(Location_ID)
 );
 
--- 3️⃣ Sensors
+-- Sensors
 -- Menyimpan data setiap sensor IoT
 CREATE TABLE Sensors (
     Sensor_ID VARCHAR(10) PRIMARY KEY,
@@ -32,7 +32,7 @@ CREATE TABLE Sensors (
     Current_Status VARCHAR(20) CHECK (Current_Status IN ('Active', 'Inactive', 'Faulty'))
 );
 
--- 4️⃣ Sensor_Placement
+-- Sensor_Placement
 -- Menunjukkan di unit mana sensor dipasang
 CREATE TABLE Sensor_Placement (
     Placement_ID SERIAL PRIMARY KEY,
@@ -44,7 +44,7 @@ CREATE TABLE Sensor_Placement (
     FOREIGN KEY (Unit_ID) REFERENCES Units(Unit_ID)
 );
 
--- 5️⃣ Engineers
+-- Engineers
 -- Data engineer yang melakukan maintenance sensor
 CREATE TABLE Engineers (
     Engineer_ID VARCHAR(10) PRIMARY KEY,
@@ -53,7 +53,7 @@ CREATE TABLE Engineers (
     Specialty VARCHAR(50)
 );
 
--- 6️⃣ Maintenance_Records
+-- Maintenance_Records
 -- Catatan riwayat perawatan untuk setiap sensor
 CREATE TABLE Maintenance_Records (
     Maintenance_ID SERIAL PRIMARY KEY,
