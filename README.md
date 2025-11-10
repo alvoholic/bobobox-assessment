@@ -1,42 +1,53 @@
-# bobobox-assessment
+Bobobox Assessment
 
-Data Analysis Challenge/
+Repository ini berisi kumpulan challenge teknikal yang mencakup data analysis, database design, python coding, dan SQL query.
+Tujuan dari assessment ini adalah untuk menguji kemampuan analisis data, transformasi, serta desain dan implementasi query database.
+
+=======================================================================================================================================
+
+Struktur Direktori
+
+bobobox-assessment/
 │
-├── Anomali Detection/
-│   ├── transaction_anomaly.py
-│   ├── Explanation.txt
-│   └── Output.txt
-│
-├── Data Insight/
-│   ├── transactions.csv
-│   ├── transaction_summary.py
-│   ├── Explanation.txt
-│   └── Output.txt
+├── Data Analysis Challenge/
+│   ├── Anomali Detection/
+│   │   ├── Explanation.txt
+│   │   ├── Output.txt
+│   │   └── transaction_anomaly.py
+│   │
+│   └── Data Insight/
+│       ├── Explanation.txt
+│       ├── Output.txt
+│       ├── transaction_summary.py
+│       └── transactions.csv
 │
 ├── Database Design/
-│   └── Relational Database Design for .../
-│       └── create_tables.sql
+│   └── Relational Database Design for ...
+│       ├── create_tables.sql
+│       └── .gitkeep
 │
 ├── Python Code Challenge/
 │   └── Data Transformation/
-│       ├── data_transformation.py
 │       ├── Explanation.txt
-│       └── Result.txt
+│       ├── Result.txt
+│       └── data_transformation.py
 │
 └── SQL Query Challenge/
     ├── Aggregation Query/
-    │   ├── aggregation.sql
     │   ├── Explanation.txt
-    │   └── Contoh Output.txt
+    │   ├── Contoh Output.txt
+    │   └── aggregation.sql
     │
     └── Multi-Table Join Query/
-        ├── multi-table-join-query.sql
         ├── Explanation.txt
-        └── Contoh Output.txt
+        ├── Contoh Output.txt
+        └── multi-table-join-query.sql
 
-===============================================================================================================================================================
+==============================================================================================================================================================
 
-1. Anomaly Detection
+1. Data Analysis Challenge
+   
+a. Anomaly Detection
 
 Folder: Anomali Detection
 Deskripsi:
@@ -46,7 +57,7 @@ File Utama:
 - Explanation.txt – Penjelasan metode deteksi yang digunakan.
 - Output.txt – Hasil deteksi transaksi anomali.
 
-2. Data Insight
+b. Data Insight
 
 Folder: Data Insight
 Deskripsi:
@@ -57,7 +68,7 @@ File Utama:
 - Explanation.txt – Penjelasan logika analisis.
 - Output.txt – Hasil insight yang dihasilkan.
 
-3. Database Design
+2. Database Design
 
 Folder: Database Design/Relational Database Design for ...
 Deskripsi:
@@ -65,7 +76,7 @@ Perancangan model database relasional yang terstruktur untuk menyimpan data tran
 File Utama:
 - create_tables.sql – Script SQL untuk membuat tabel dan relasi antar entitas.
 
-4. Python Code Challenge – Data Transformation
+3. Python Code Challenge – Data Transformation
 
 Folder: Python Code Challenge/Data Transformation
 Deskripsi:
@@ -75,7 +86,7 @@ File Utama:
 - Explanation.txt – Penjelasan proses transformasi.
 - Result.txt – Hasil akhir transformasi.
 
-5. SQL Query Challenge
+4. SQL Query Challenge
 
 Folder: SQL Query Challenge
 Deskripsi:
