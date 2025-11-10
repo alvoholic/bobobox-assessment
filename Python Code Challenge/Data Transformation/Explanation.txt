@@ -1,0 +1,98 @@
+Gambaran Umum
+
+Fungsi utama:
+transform_checkin_logs(df: pd.DataFrame) -> pd.DataFrame
+Digunakan untuk memproses data mentah check-in (check-in logs) agar lebih siap dipakai untuk analisis, dengan langkah-langkah:
+- Mengubah kolom tanggal menjadi tipe datetime.
+- Memfilter hanya data dari tahun 2024 ke atas.
+- Mengubah durasi menginap (“2 days, 10 hours”) menjadi angka total jam.
+- Menstandarkan tipe tamu (Guest_Type) seperti “new”, “returning”, dll menjadi format konsisten.
+
+
+Rincian Langkah dalam Fungsi
+
+1. Konversi kolom tanggal
+    df["Check_In_Date"] = pd.to_datetime(df["Check_In_Date"], errors="coerce")
+    - Mengubah string tanggal (mis. "2024-03-15") jadi objek waktu (datetime).
+    - Jika ada format salah (contoh: 2024-16-05 → bulan 16 tidak valid), nilainya jadi NaT (Not a Time).
+
+2. Filter data hanya untuk tahun 2024 dan setelahnya
+    df = df[df["Check_In_Date"] >= pd.Timestamp("2024-01-01")].copy()
+    - Jadi data 2023, 2022, dst. akan dihapus.
+    - Baris dengan NaT diabaikan (karena tidak bisa dibandingkan dengan tanggal).
+
+3. Parsing durasi menginap (Duration_String)
+    Misalnya: "2 days, 10 hours" → 58 jam.
+    def parse_duration(duration_str):
+    if pd.isna(duration_str):
+        return None
+    days = 0
+    hours = 0
+    match_days = re.search(r"(\d+)\s*day", duration_str)
+    match_hours = re.search(r"(\d+)\s*hour", duration_str)
+    if match_days:
+        days = int(match_days.group(1))
+    if match_hours:
+        hours = int(match_hours.group(1))
+    return days * 24 + hours
+    lalu terapkan :
+    df["Stay_Duration_Hours"] = df["Duration_String"].apply(parse_duration)
+
+    Contoh hasil:
+    | Duration_String  | Stay_Duration_Hours |
+    | ---------------- | ------------------- |
+    | 2 days, 10 hours | 58                  |
+    | 10 hours         | 10                  |
+    | 4 days, 0 hours  | 96                  |
+
+4. Standarisasi kolom Guest_Type
+    def standardize_guest_type(x):
+    if not isinstance(x, str):
+        return x
+    x_lower = x.strip().lower()
+    if any(k in x_lower for k in ["new", "first", "baru"]):
+        return "New"
+    elif any(k in x_lower for k in ["return", "repeat", "kembali"]):
+        return "Returning"
+    else:
+        return x
+    - Fungsi ini mendeteksi kata kunci dalam teks:
+      "new", "first", "baru" -> jadi "New"
+      "return", "repeat", "kembali" -> jadi "Returning"
+    
+    Contoh hasil :
+    | Guest_Type | Setelah Standarisasi |
+    | ---------- | -------------------- |
+    | New_User   | New                  |
+    | returning  | Returning            |
+    | First-Time | New                  |
+    | kembali    | Returning            |
+    | Baru       | New                  |
+
+5. Output akhir
+    Fungsi mengembalikan DataFrame baru:
+    return df.reset_index(drop=True)
+
+
+Bagian Uji Coba (Example Usage)
+
+- Data dummy (50 baris) dimasukkan langsung sebagai string CSV:
+    data = """Log_ID,Guest_ID,Check_In_Date,..."""
+
+- Kemudian dibaca ke DataFrame:
+    df_raw = pd.read_csv(StringIO(data))
+
+- Lalu diproses:
+    df_transformed = transform_checkin_logs(df_raw)
+
+- Dan ditampilkan:
+    print(df_transformed.head(10))
+
+Hasil Akhir
+
+| Log_ID | Guest_ID | Check_In_Date | Duration_String  | Location_ID | Guest_Type | Stay_Duration_Hours |
+| -----: | -------- | ------------- | ---------------- | ----------- | ---------- | ------------------: |
+|   1001 | G1234    | 2024-03-15    | 2 days, 10 hours | LOC01       | New        |                  58 |
+|   1003 | G9012    | 2024-06-01    | 4 days, 0 hours  | LOC01       | Returning  |                  96 |
+|   1004 | G3456    | 2024-01-05    | 10 hours         | LOC02       | New        |                  10 |
+|   1005 | G7890    | 2024-07-20    | 5 days, 15 hours | LOC04       | Returning  |                 135 |
