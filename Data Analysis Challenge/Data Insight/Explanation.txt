@@ -1,0 +1,49 @@
+Penjelasan Langkah demi Langkah
+
+STEP 1 — Load CSV file
+    file_path = "transactions.csv"
+    df = pd.read_csv(file_path)
+- Script membaca file transactions.csv ke dalam DataFrame df.
+- Kemudian dicek apakah kolom yang diharapkan ada semua:
+    expected_cols = ["Transaction_ID", "User_ID", "Location_ID",
+                   "Transaction_Type", "Amount_IDR", "Transaction_Time",
+                   "Status", "Device_Type"]
+- Jika ada yang hilang, akan muncul error.
+
+
+STEP 2 — Filter hanya transaksi sukses
+    df_success = df[df["Status"].str.lower() == "success"].copy()
+- Hanya baris dengan status Success yang akan diproses selanjutnya.
+- Baris dengan “Failed”, “Pending”, atau lainnya akan diabaikan.
+
+
+STEP 3 — Ringkasan per Device
+  * Dibuat agregasi statistik per jenis device:
+      summary = (
+      df_success.groupby("Device_Type")
+      .agg(
+          Total_Transactions=("Transaction_ID", "count"),
+          Total_Amount_IDR=("Amount_IDR", "sum"),
+          Avg_Amount_IDR=("Amount_IDR", "mean")
+          )
+        .reset_index()
+      )
+      - Total_Transactions → jumlah transaksi sukses per device
+      - Total_Amount_IDR → total nominal transaksi (dalam IDR)
+      - Avg_Amount_IDR → rata-rata nominal transaksi
+  * Kemudian ditambahkan jenis transaksi yang paling sering digunakan di masing-masing device:
+      dominant_type = (
+      df_success.groupby(["Device_Type", "Transaction_Type"])
+      .size()
+      .reset_index(name="Count")
+      .sort_values(["Device_Type", "Count"], ascending=[True, False])
+      .drop_duplicates("Device_Type")[["Device_Type", "Transaction_Type"]]
+      )
+  * Lalu digabung ke summary:
+      summary = summary.merge(dominant_type, on="Device_Type", how="left")
+      summary.rename(columns={"Transaction_Type": "Dominant_Transaction_Type"}, inplace=True)
+
+
+STEP 4 — Simpan hasil
+    summary.to_csv("output/summary.csv", index=False)
+  - File hasil disimpan di folder output/summary.csv.  
