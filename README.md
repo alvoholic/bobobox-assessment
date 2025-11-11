@@ -6,15 +6,15 @@ Tujuan dari assessment ini adalah untuk menguji kemampuan analisis data, transfo
 
 ## Struktur Direktori
 
-bobobox-assessment/
-│
-├── Data Analysis Challenge/
-│   ├── Anomali Detection/
-│   │   ├── Explanation.txt
-│   │   ├── Output.txt
-│   │   └── transaction_anomaly.py
-│   │
-│   └── Data Insight/
+bobobox-assessment/  
+│  
+├── Data Analysis Challenge/  
+│   ├── Anomali Detection/  
+│   │   ├── Explanation.txt  
+│   │   ├── Output.txt  
+│   │   └── transaction_anomaly.py  
+│   │  
+│   └── Data Insight/  
 │       ├── Explanation.txt
 │       ├── Output.txt
 │       ├── transaction_summary.py
