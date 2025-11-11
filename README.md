@@ -138,4 +138,3 @@ Database:
 
 Author  
 Nama: Alfi Safrian  
-Tujuan: Latihan dan pengembangan keterampilan analisis data, SQL, serta desain database.  
