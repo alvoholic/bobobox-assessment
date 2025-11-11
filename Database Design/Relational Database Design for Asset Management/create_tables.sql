@@ -1,6 +1,6 @@
--- ===========================================
--- DATABASE DESIGN: Bobobox Asset Management
--- ===========================================
+===========================================
+DATABASE DESIGN: Bobobox Asset Management
+===========================================
 
 -- Locations
 -- Menyimpan daftar lokasi Bobobox (Hotel/Cabin)
