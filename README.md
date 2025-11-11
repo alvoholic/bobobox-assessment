@@ -43,11 +43,10 @@ bobobox-assessment/
         └── multi-table-join-query.sql
 
 
-==============================================================================================================================================================
 
-1. Data Analysis Challenge
+## 1. Data Analysis Challenge
    
-a. Anomaly Detection
+## a. Anomaly Detection
 
 Folder: Anomali Detection
 Deskripsi:
@@ -57,7 +56,7 @@ File Utama:
 - Explanation.txt – Penjelasan metode deteksi yang digunakan.
 - Output.txt – Hasil deteksi transaksi anomali.
 
-b. Data Insight
+## b. Data Insight
 
 Folder: Data Insight
 Deskripsi:
@@ -68,7 +67,8 @@ File Utama:
 - Explanation.txt – Penjelasan logika analisis.
 - Output.txt – Hasil insight yang dihasilkan.
 
-2. Database Design
+
+## 2. Database Design
 
 Folder: Database Design/Relational Database Design for ...
 Deskripsi:
@@ -76,7 +76,8 @@ Perancangan model database relasional yang terstruktur untuk menyimpan data tran
 File Utama:
 - create_tables.sql – Script SQL untuk membuat tabel dan relasi antar entitas.
 
-3. Python Code Challenge – Data Transformation
+
+## 3. Python Code Challenge – Data Transformation
 
 Folder: Python Code Challenge/Data Transformation
 Deskripsi:
@@ -86,29 +87,30 @@ File Utama:
 - Explanation.txt – Penjelasan proses transformasi.
 - Result.txt – Hasil akhir transformasi.
 
-4. SQL Query Challenge
+
+## 4. SQL Query Challenge
 
 Folder: SQL Query Challenge
 Deskripsi:
 Berisi tantangan SQL yang berfokus pada manipulasi dan analisis data dalam basis data relasional.
 
-a. Aggregation Query
+## a. Aggregation Query
 Melakukan agregasi data untuk menghasilkan ringkasan statistik seperti total, rata-rata, atau jumlah transaksi per kategori.
 File:
 - aggregation.sql – Query utama agregasi.
 - Explanation.txt – Penjelasan logika query.
 - Contoh Output.txt – Contoh hasil eksekusi query.
 
-b. Multi-Table Join Query
+## b. Multi-Table Join Query
 Melakukan penggabungan beberapa tabel untuk menghasilkan laporan terintegrasi yang mencakup berbagai entitas.
 File:
 - multi-table-join-query.sql – Query utama join.
 - Explanation.txt – Penjelasan logika join.
 - Contoh Output.txt – Contoh hasil eksekusi query.
 
-=======================================================================================================================================
 
-Cara Menjalankan
+
+## Cara Menjalankan
 
 Menjalankan Script Python
 1. Pastikan Python 3.10+ telah terpasang.
@@ -121,9 +123,9 @@ Gunakan PostgreSQL, MySQL, atau SQLite.
 Eksekusi melalui command line atau DBMS GUI:
     psql -U <user> -d <database> -f create_tables.sql
 
-=======================================================================================================================================
 
-Tools dan Library
+
+## Tools dan Library
 
 Python:
 - pandas
