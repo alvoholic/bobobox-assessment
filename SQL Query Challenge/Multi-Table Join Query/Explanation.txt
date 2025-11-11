@@ -3,13 +3,11 @@ Penjelasan Detail per Bagian
 1. FROM Bookings b
     Ini adalah tabel utama berisi data pemesanan (booking).
     kolomnya:
-    - Booking_ID
-    - Guest_ID
-    - Location_ID
-    - Booking_Date
-    - Check_In_Date
-    - Duration
-    - Total_Price
+    - Guest_Name dari tabel Guests
+    - Location_Name dari tabel Locations
+    - Booking_Date dari tabel Bookings
+    - Total_Price dari tabel Bookings
+    - Rating dari tabel Reviews
 
 2. JOIN ke tabel lain
     - JOIN Guests g -> ambil nama tamu (Guest_Name) berdasarkan Guest_ID.
