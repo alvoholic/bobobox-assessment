@@ -3,7 +3,6 @@
 Repository ini berisi kumpulan challenge teknikal yang mencakup data analysis, database design, python coding, dan SQL query.
 Tujuan dari assessment ini adalah untuk menguji kemampuan analisis data, transformasi, serta desain dan implementasi query database.
 
-=======================================================================================================================================
 
 ## Struktur Direktori
 
