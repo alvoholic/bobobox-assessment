@@ -58,10 +58,10 @@ File Utama:
 
 ## b. Data Insight
 
-Folder: Data Insight
-Deskripsi:
-Analisis deskriptif dan eksploratif terhadap dataset transaksi untuk menemukan pola, tren, dan insight bisnis yang relevan.
-File Utama:
+Folder: Data Insight  
+Deskripsi:  
+Analisis deskriptif dan eksploratif terhadap dataset transaksi untuk menemukan pola, tren, dan insight bisnis yang relevan.  
+File Utama:  
 - transactions.csv – Dataset sumber.
 - transaction_summary.py – Script analisis data.
 - Explanation.txt – Penjelasan logika analisis.
@@ -70,19 +70,19 @@ File Utama:
 
 ## 2. Database Design
 
-Folder: Database Design/Relational Database Design for ...
-Deskripsi:
-Perancangan model database relasional yang terstruktur untuk menyimpan data transaksi, pengguna, dan entitas terkait.
-File Utama:
+Folder: Database Design/Relational Database Design for ...  
+Deskripsi:  
+Perancangan model database relasional yang terstruktur untuk menyimpan data transaksi, pengguna, dan entitas terkait.  
+File Utama:  
 - create_tables.sql – Script SQL untuk membuat tabel dan relasi antar entitas.
 
 
 ## 3. Python Code Challenge – Data Transformation
 
-Folder: Python Code Challenge/Data Transformation
-Deskripsi:
-Transformasi data mentah menjadi format yang siap digunakan untuk analisis, termasuk pembersihan, penggabungan, dan perhitungan metrik.
-File Utama:
+Folder: Python Code Challenge/Data Transformation  
+Deskripsi:  
+Transformasi data mentah menjadi format yang siap digunakan untuk analisis, termasuk pembersihan, penggabungan, dan perhitungan metrik.  
+File Utama:  
 - data_transformation.py – Script utama transformasi data.
 - Explanation.txt – Penjelasan proses transformasi.
 - Result.txt – Hasil akhir transformasi.
@@ -90,20 +90,20 @@ File Utama:
 
 ## 4. SQL Query Challenge
 
-Folder: SQL Query Challenge
-Deskripsi:
-Berisi tantangan SQL yang berfokus pada manipulasi dan analisis data dalam basis data relasional.
+Folder: SQL Query Challenge  
+Deskripsi:  
+Berisi tantangan SQL yang berfokus pada manipulasi dan analisis data dalam basis data relasional.  
 
 ## a. Aggregation Query
-Melakukan agregasi data untuk menghasilkan ringkasan statistik seperti total, rata-rata, atau jumlah transaksi per kategori.
-File:
+Melakukan agregasi data untuk menghasilkan ringkasan statistik seperti total, rata-rata, atau jumlah transaksi per kategori.  
+File:  
 - aggregation.sql – Query utama agregasi.
 - Explanation.txt – Penjelasan logika query.
 - Contoh Output.txt – Contoh hasil eksekusi query.
 
 ## b. Multi-Table Join Query
-Melakukan penggabungan beberapa tabel untuk menghasilkan laporan terintegrasi yang mencakup berbagai entitas.
-File:
+Melakukan penggabungan beberapa tabel untuk menghasilkan laporan terintegrasi yang mencakup berbagai entitas.  
+File:  
 - multi-table-join-query.sql – Query utama join.
 - Explanation.txt – Penjelasan logika join.
 - Contoh Output.txt – Contoh hasil eksekusi query.
@@ -112,15 +112,15 @@ File:
 
 ## Cara Menjalankan
 
-Menjalankan Script Python
+Menjalankan Script Python  
 1. Pastikan Python 3.10+ telah terpasang.
-2. Jalankan script sesuai folder:
-    cd "Data Analysis Challenge/Anomali Detection"
-    python transaction_anomaly.py
+2. Jalankan script sesuai folder:  
+    cd "Data Analysis Challenge/Anomali Detection"  
+    python transaction_anomaly.py  
 
-Menjalankan SQL Script
-Gunakan PostgreSQL, MySQL, atau SQLite.
-Eksekusi melalui command line atau DBMS GUI:
+Menjalankan SQL Script  
+Gunakan PostgreSQL, MySQL, atau SQLite.  
+Eksekusi melalui command line atau DBMS GUI:  
     psql -U <user> -d <database> -f create_tables.sql
 
 
@@ -138,6 +138,6 @@ Database:
 - SQLite (untuk pengujian lokal)
 
 
-Author
-Nama: Alfi Safrian
-Tujuan: Latihan dan pengembangan keterampilan analisis data, SQL, serta desain database.
+Author  
+Nama: Alfi Safrian  
+Tujuan: Latihan dan pengembangan keterampilan analisis data, SQL, serta desain database.  
