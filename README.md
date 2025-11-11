@@ -48,10 +48,10 @@ bobobox-assessment/
    
 ## a. Anomaly Detection
 
-Folder: Anomali Detection
-Deskripsi:
-Menjalankan analisis untuk mendeteksi transaksi yang menyimpang dari pola umum (anomali), misalnya transaksi dengan jumlah tidak wajar atau frekuensi tinggi.
-File Utama:
+Folder: Anomali Detection  
+Deskripsi:  
+Menjalankan analisis untuk mendeteksi transaksi yang menyimpang dari pola umum (anomali), misalnya transaksi dengan jumlah tidak wajar atau frekuensi tinggi.  
+File Utama:  
 - transaction_anomaly.py – Script utama untuk mendeteksi anomali.
 - Explanation.txt – Penjelasan metode deteksi yang digunakan.
 - Output.txt – Hasil deteksi transaksi anomali.
