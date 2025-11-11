@@ -15,32 +15,32 @@ bobobox-assessment/
 │   │   └── transaction_anomaly.py  
 │   │  
 │   └── Data Insight/  
-│       ├── Explanation.txt
-│       ├── Output.txt
-│       ├── transaction_summary.py
-│       └── transactions.csv
-│
-├── Database Design/
-│   └── Relational Database Design for ...
-│       ├── create_tables.sql
-│       └── .gitkeep
-│
-├── Python Code Challenge/
-│   └── Data Transformation/
-│       ├── Explanation.txt
-│       ├── Result.txt
-│       └── data_transformation.py
-│
-└── SQL Query Challenge/
-    ├── Aggregation Query/
-    │   ├── Explanation.txt
-    │   ├── Contoh Output.txt
-    │   └── aggregation.sql
-    │
-    └── Multi-Table Join Query/
-        ├── Explanation.txt
-        ├── Contoh Output.txt
-        └── multi-table-join-query.sql
+│       ├── Explanation.txt  
+│       ├── Output.txt  
+│       ├── transaction_summary.py  
+│       └── transactions.csv  
+│  
+├── Database Design/  
+│   └── Relational Database Design for ...  
+│       ├── create_tables.sql  
+│       └── .gitkeep  
+│  
+├── Python Code Challenge/  
+│   └── Data Transformation/  
+│       ├── Explanation.txt  
+│       ├── Result.txt  
+│       └── data_transformation.py  
+│  
+└── SQL Query Challenge/  
+    ├── Aggregation Query/  
+    │   ├── Explanation.txt  
+    │   ├── Contoh Output.txt  
+    │   └── aggregation.sql  
+    │  
+    └── Multi-Table Join Query/  
+        ├── Explanation.txt  
+        ├── Contoh Output.txt  
+        └── multi-table-join-query.sql  
 
 
 
