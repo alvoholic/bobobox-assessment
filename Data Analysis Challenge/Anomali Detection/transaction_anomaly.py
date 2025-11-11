@@ -28,9 +28,9 @@ anomalies = df_success[df_success["Amount_IDR"] > upper_limit].copy()
 os.makedirs("output", exist_ok=True)
 anomalies.to_csv("output/anomalies.csv", index=False)
 
-# ===============================
+===============================
 # STEP 4 — Tampilkan hasil
-# ===============================
+===============================
 print("\n=== Potential Anomalies (Amount_IDR) ===")
 if anomalies.empty:
     print("Tidak ada anomali terdeteksi.")
