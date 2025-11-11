@@ -5,8 +5,7 @@ Tujuan dari assessment ini adalah untuk menguji kemampuan analisis data, transfo
 
 =======================================================================================================================================
 
-'''
-Struktur Direktori
+## Struktur Direktori
 
 bobobox-assessment/
 │
@@ -43,7 +42,7 @@ bobobox-assessment/
         ├── Explanation.txt
         ├── Contoh Output.txt
         └── multi-table-join-query.sql
-'''
+
 
 ==============================================================================================================================================================
 
