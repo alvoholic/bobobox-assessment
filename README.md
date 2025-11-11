@@ -130,12 +130,10 @@ Eksekusi melalui command line atau DBMS GUI:
 Python:
 - pandas
 - numpy
-- matplotlib (opsional)
-- seaborn (opsional)
 
 Database:
 - PostgreSQL
-- SQLite (untuk pengujian lokal)
+- SQLite
 
 
 Author  
