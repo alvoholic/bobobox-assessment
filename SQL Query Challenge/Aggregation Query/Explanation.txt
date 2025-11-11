@@ -2,11 +2,10 @@ Penjelasan per bagian
 
 1. FROM Bookings b
     Mengambil data pemesanan dari tabel Bookings, berisi detail setiap transaksi.
-    Misalnya kolomnya:
-    - Booking_ID
-    - Guest_ID
-    - Location_ID
-    - Booking_Date, dll.
+    Kolomnya:
+    - Booking_ID dari tabel Bookings
+    - Rating dari tabel Reviews
+    - City dari tabel Locations
 
 2. JOIN Locations l ON b.Location_ID = l.Location_ID
     Menghubungkan tiap booking dengan lokasinya (misalnya hotel atau pod tertentu), agar kita tahu kota (City) tempat lokasi tersebut berada.
